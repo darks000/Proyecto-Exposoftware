@@ -1,0 +1,7 @@
+{
+  "name": "Exposoftware",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
