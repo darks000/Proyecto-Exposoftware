@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { userInfo } from 'os';
 import { User } from '../models/user.mode';
 import { ToastController, LoadingController, NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
