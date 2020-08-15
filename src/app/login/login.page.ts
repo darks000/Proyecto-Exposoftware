@@ -26,19 +26,22 @@ export class LoginPage implements OnInit {
         message:"Please Wait..."
       });
       (await loader).present();
-    }
 
-    
-    try {
-      await this.afAuth.signInWithEmailAndPassword(user.email,user.password)
-      .then(data => {
-        console.log(data);
-        this.navCtrl.navigateRoot('login');
-      
-      });
-    } catch (e) {
-      this.showToast(e)
-    }
+      try {
+        await this.afAuth.signInWithEmailAndPassword(user.email,user.password)
+        .then(data => {
+          console.log(data);
+          console.log("Ingreso");
+          this.navCtrl.navigateRoot('login');
+        
+        });
+      } catch (e) {
+        this.showToast(e)
+      }
+
+      //dismiss loader
+      (await loader).dismiss();
+    } 
   }
 
   formValidation(){
