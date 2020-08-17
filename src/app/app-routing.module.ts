@@ -29,6 +29,10 @@ const routes: Routes = [
   },  {
     path: 'asignaturas',
     loadChildren: () => import('./pages/asignaturas/asignaturas.module').then( m => m.AsignaturasPageModule)
+  },
+  {
+    path: 'agregar-asignatura',
+    loadChildren: () => import('./pages/agregar-asignatura/agregar-asignatura.module').then( m => m.AgregarAsignaturaPageModule)
   }
 
 

@@ -9,12 +9,17 @@
     <ion-item-sliding *ngFor="let asig of asignaturas">
       <ion-item>
         <ion-label>
-          {{asig.id}}
+          {{asig.id}}  {{asig.nombre}}
         </ion-label>
-        <ion-label>
-          {{asig.nombre}}
-        </ion-label>
+        <ion-button (click)="presentAlertConfirm(asig.id)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
       </ion-item>
     </ion-item-sliding>
   </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/agregar-asignatura">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
