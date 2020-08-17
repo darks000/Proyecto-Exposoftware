@@ -6,12 +6,12 @@ export const environment = {
   production: false,
   firebaseConfig : {
     apiKey: "AIzaSyAbkXYFlrvVwm8P7Hq8Bjm60w0p7xyaEpk",
-    authDomain: "proyectoprueba-18190.firebaseapp.com",
-    databaseURL: "https://proyectoprueba-18190.firebaseio.com",
-    projectId: "proyectoprueba-18190",
-    storageBucket: "proyectoprueba-18190.appspot.com",
-    messagingSenderId: "44861957218",
-    appId: "1:44861957218:web:20be114b8f57f09e941d3b"
+  authDomain: "proyectoprueba-18190.firebaseapp.com",
+  databaseURL: "https://proyectoprueba-18190.firebaseio.com",
+  projectId: "proyectoprueba-18190",
+  storageBucket: "proyectoprueba-18190.appspot.com",
+  messagingSenderId: "44861957218",
+  appId: "1:44861957218:web:20be114b8f57f09e941d3b"
   }
 };
 
