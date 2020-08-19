@@ -1,34 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import {Asignatura } from '../../interfaces/asignatura';
-import {AsignaturaService} from '../../servicios/asignatura-service.service';
+import {Rubrica} from '../../interfaces/rubrica';
+import {RubricaService} from '../../servicios/rubrica.service';
 import { AlertController } from '@ionic/angular';
 @Component({
-  selector: 'app-asignaturas',
-  templateUrl: './asignaturas.page.html',
-  styleUrls: ['./asignaturas.page.scss'],
+  selector: 'app-rubricas',
+  templateUrl: './rubricas.page.html',
+  styleUrls: ['./rubricas.page.scss'],
 })
-export class AsignaturasPage implements OnInit {
+export class RubricasPage implements OnInit {
 
-  asignaturas: Asignatura[];
-  constructor(private asigService:AsignaturaService,
+  Rubricas: Rubrica[];
+  constructor(private rubricaService:RubricaService,
     public alertController: AlertController
     ) { }
 
   ngOnInit() {
-    this.asigService.getAsignaturas().subscribe(res=>{
-      this.asignaturas = res;
+    this.rubricaService.getRubricas().subscribe(res=>{
+      this.Rubricas = res;
     })
   }
  
-  removeAsignatura(id : string){
-    this.asigService.deleteAsignatura(id);
+  removeRubrica(id : string){
+    this.rubricaService.deleteRubrica(id);
   }
 
   async presentAlertConfirm(id:string) {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: '¡Atención!',
-      message: '¿Está seguro de que desea eliminar esta asignatura?',
+      message: '¿Está seguro de que desea eliminar esta rúbrica?',
       buttons: [
         {
           text: 'Cancelar',
@@ -40,7 +40,7 @@ export class AsignaturasPage implements OnInit {
         }, {
           text: 'Okay',
           handler: () => {
-            this.removeAsignatura(id);
+            this.removeRubrica(id);
           }
         }
       ]

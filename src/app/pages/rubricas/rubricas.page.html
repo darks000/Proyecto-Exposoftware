@@ -1,23 +1,25 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>asignaturas</ion-title>
+    <ion-title>Rúbricas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>  
-      <ion-item *ngFor="let asig of asignaturas">
+      <ion-item *ngFor="let rubric of Rubricas">
         <ion-label text-wrap>
-          {{asig.codigo}}   {{asig.nombre}}      <p>{{asig.area}}</p>
+          {{rubric.nombre}}
         </ion-label>
-        
-        <ion-button (click)="presentAlertConfirm(asig.id)" color="danger">
+        <ion-button button [routerLink]="['/rubrica-detail',rubric.id]" color="secondary">
+          <ion-icon name="pencil"></ion-icon>
+        </ion-button>
+        <ion-button (click)="presentAlertConfirm(rubric.id)" color="danger">
           <ion-icon name="trash"></ion-icon>
         </ion-button>
       </ion-item>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/agregar-asignatura">
+    <ion-fab-button routerLink="/agregar-rubrica">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

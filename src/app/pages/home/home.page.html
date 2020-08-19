@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row>
+  <ion-col>
+    <ion-button [routerLink]="['/asignaturas']" color="secondary">
+      <ion-icon name="document"></ion-icon>
+      <ion-label>Asignaturas</ion-label>
+  </ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button  [routerLink]="['/rubricas']" color="secondary">
+      <ion-icon name="document"></ion-icon>      
+      <ion-label>Rubricas</ion-label>
+  </ion-button>
+  </ion-col>
+</ion-row>
+
+<ion-row>
+  <ion-col>
+    <ion-button color="secondary"><ion-icon name="document">
+    </ion-icon>
+  </ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button color="secondary"><ion-icon name="document">
+    </ion-icon>
+  </ion-button>
+  </ion-col>
+</ion-row>
+</ion-content>

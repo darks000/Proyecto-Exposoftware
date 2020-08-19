@@ -1,17 +1,27 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>AgregarAsignatura</ion-title>
+    <ion-title>Agregar asignatura</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-item>
     <ion-label position="floating">Código asignatura</ion-label>
-    <ion-input type="text" [(ngModel)]="asig.id" name="idField" required></ion-input>
+    <ion-input type="text" [(ngModel)]="asig.codigo" name="idField" required></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Nombre asignatura</ion-label>
     <ion-input type="text" [(ngModel)]="asig.nombre" name="NameField" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Area</ion-label>
+    <ion-select [(ngModel)]="asig.area" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="Inteligencia artificial">Inteligencia artificial</ion-select-option>
+      <ion-select-option value="Software">Software</ion-select-option>
+      <ion-select-option value="Base de datos">Base de datos</ion-select-option>
+      <ion-select-option value="Redes">Redes</ion-select-option>
+    </ion-select>
   </ion-item>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

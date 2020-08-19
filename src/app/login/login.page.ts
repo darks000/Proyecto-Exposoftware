@@ -30,10 +30,8 @@ export class LoginPage implements OnInit {
       try {
         await this.afAuth.signInWithEmailAndPassword(user.email,user.password)
         .then(data => {
-          console.log(data);
-          console.log("Ingreso");
-          this.navCtrl.navigateRoot('login');
-        
+          this.navCtrl.navigateRoot('home');
+          
         });
       } catch (e) {
         this.showToast(e)
