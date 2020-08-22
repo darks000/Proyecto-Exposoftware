@@ -23,15 +23,14 @@ export class LoginPage implements OnInit {
 
     if(this.formValidation()){
       let loader = this.loadingCtrl.create({
-        message:"Please Wait..."
+        message:"Por favor espere..."
       });
       (await loader).present();
 
       try {
         await this.afAuth.signInWithEmailAndPassword(user.email,user.password)
         .then(data => {
-          this.navCtrl.navigateRoot('home');
-          
+          this.navCtrl.navigateRoot('home');         
         });
       } catch (e) {
         this.showToast(e)

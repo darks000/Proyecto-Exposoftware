@@ -24,16 +24,14 @@ export class RegisterPage implements OnInit {
     if(this.formValidation()){
       //show loader
       let loader = this.loadingCtrl.create({
-        message:"Please Wait..."
+        message:"Espere porfavor..."
       });
       (await loader).present();
 
       try {
         await this.afAuth.createUserWithEmailAndPassword(user.email,user.password)
         .then(data => {
-          console.log(data);
-          this.navCtrl.navigateRoot('login');
-        
+          this.navCtrl.navigateRoot('login');    
         });
       } catch (e) {
         this.showToast(e)
